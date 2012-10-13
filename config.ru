@@ -4,5 +4,5 @@ require "bundler"
 Bundler.require
 
 require "./app"
-run Sinatra::Application
-
+require "./wrapper"
+run Wrapper.new(Sinatra::Application)
