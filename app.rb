@@ -60,6 +60,7 @@ def fetch_sun_times(weather)
   local_sunset = sun_info.last.last
   @sunrise = local_aruba_to_utc(local_sunrise)
   @sunset = local_aruba_to_utc(local_sunset)
+  @cat = Time.now.to_i
 end
 
 def local_aruba_to_utc(time)

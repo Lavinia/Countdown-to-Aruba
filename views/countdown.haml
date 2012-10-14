@@ -3,10 +3,15 @@
     %title Countdown to Aruba
     %link(rel="stylesheet" href="styles.css")
     %script{type: "text/javascript", src: "application.js"}
+    :javascript
+      window.sun_times = {
+        sunrise: new Date("#{@sunrise.to_i}" * 1000),
+        sunset: new Date("#{@sunset.to_i}" * 1000)
+      }
   %body
     #content
       #departure
-        %h1#countdown== #{ @days_to_departure }
+        %h1#countdown= @days_to_departure
         %h2 days to departure
       #weather
         = render(:haml, :weather)
@@ -16,7 +21,3 @@
         %a{href: "https://twitter.com/Lavinia666"}@Lavinia666
         and
         %a{href: "https://twitter.com/DevLCSC"}@DevLCSC
-      #sunrise
-        = @sunrise
-      #sunset
-        = @sunset

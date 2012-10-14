@@ -35,18 +35,11 @@ day_time = ->
   now = new Date
   window.sun_times.sunrise.getTime() <= now.getTime() < window.sun_times.sunset.getTime()
 
-window.dt = day_time
-
 update_background_image = ->
   if day_time()
     document.getElementById("content").style.backgroundImage = 'url("images/day.jpg")'
   else
     document.getElementById("content").style.backgroundImage = 'url("images/night.jpg")'
-
-window.sun_times = {
-  sunrise: new Date(Date.UTC(2012, 9, 14, 10, 29))
-  sunset: new Date(Date.UTC(2012, 9, 14, 16, 38))
-}
 
 window.onload = ->
   update_background_image()
