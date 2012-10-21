@@ -3,6 +3,8 @@ DEPARTURE_DATE = new Date(Date.UTC(2012, 11, 17, 23))
 DATE_UPDATE_INTERVAL = 30 * 1000            # Every thirty secondes
 
 BACKGROUND_UPDATE_INTERVAL = 60 * 1000      # Every minute
+BACKGROUND_DAY_IMAGE_URL = "images/day.jpg"
+BACKGROUND_NIGHT_IMAGE_URL = "images/night.jpg"
 
 WEATHER_UPDATE_INTERVAL = 30 * 60 * 1000    # Every thirty minutes
 
@@ -43,9 +45,9 @@ day_time = ->
 
 update_background_image = ->
   if day_time()
-    document.getElementById("content").style.backgroundImage = 'url("images/day.jpg")'
+    document.getElementById("content").style.backgroundImage = "url('#{BACKGROUND_DAY_IMAGE_URL}')"
   else
-    document.getElementById("content").style.backgroundImage = 'url("images/night.jpg")'
+    document.getElementById("content").style.backgroundImage = "url('#{BACKGROUND_NIGHT_IMAGE_URL}')"
 
 window.onload = ->
   update_background_image()
