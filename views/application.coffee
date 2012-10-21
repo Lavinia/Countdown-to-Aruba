@@ -1,8 +1,14 @@
 DAY = 24 * 60 * 60 * 1000
 DEPARTURE_DATE = new Date(Date.UTC(2012, 11, 17, 23))
-DATE_UPDATE_INTERVAL = 30 * 1000
-BACKGROUND_UPDATE_INTERVAL = 60 * 1000
-WEATHER_UPDATE_INTERVAL = 30 * 60 * 1000
+DATE_UPDATE_INTERVAL = 30 * 1000            # Every thirty secondes
+
+BACKGROUND_UPDATE_INTERVAL = 60 * 1000      # Every minute
+
+WEATHER_UPDATE_INTERVAL = 30 * 60 * 1000    # Every thirty minutes
+
+NEWS_FEED_UPDATE_INTERVAL = 60 * 60 * 1000  # Every hour
+NEWS_FEED_URL = 'http://aruba-daily.com/newspaper/?feed=rss2'
+NEWS_FEED_CONVERTER_URL = '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q='
 
 STATE_COMPLETE = 4
 HTTP_OK = 200
@@ -15,6 +21,7 @@ days_to_departure = ->
 update_countdown = ->
   document.getElementById("countdown").innerHTML = days_to_departure()
 
+# TODO: Visualize error messages.
 update_weather = ->
   req = new XMLHttpRequest()
 
