@@ -75,7 +75,7 @@ update_news_feed = ->
   }
 
   format_entry = (title, snippet, link) ->
-    "<p><a href='#{link}'><strong>#{title}</strong></a> ### </p>"
+    "<a href='#{link}'><strong>#{title}</strong></a> ### "
 
 
 window.onload = ->
