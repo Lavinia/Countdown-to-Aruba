@@ -62,7 +62,6 @@ update_news_feed = ->
     url: document.location.protocol + NEWS_FEED_CONVERTER_URL + encodeURIComponent(NEWS_FEED_URL)
     dataType: 'json'
     success: (data) ->
-      # Do something with
       news_feed = data.responseData.feed
 
       if news_feed?.entries?.length > 0
